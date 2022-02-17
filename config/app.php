@@ -193,5 +193,6 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // ...
     ])->toArray(),
+    'url' => 'http://localhost:8888/laravel-site/laravel-5-app/public/',
 
 ];
