@@ -9,4 +9,9 @@ class placeimg extends Model
 {
     protected $table = 'placeimg';
 
+
+    public function place()
+    {
+        return $this->belongsTo(places::class);
+    }
 }
