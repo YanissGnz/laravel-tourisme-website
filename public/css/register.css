@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&display=swap");
+
+:root {
+    --bg-color: #f2f5c8;
+    --color-accent: #a1b57d;
+}
+
+*,
+*::after,
+*::before {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Kaisei Decol", serif;
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+    background-image: url(/login-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+nav {
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav h1 {
+    margin-left: 5%;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.7em;
+}
+nav ul {
+    list-style: none;
+    display: inline-flex;
+    justify-content: flex-end;
+    gap: 50px;
+    margin-right: 5%;
+}
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.1em;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    background-color: var(--color-accent);
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform 500ms ease;
+}
+
+nav a:hover:after {
+    transform: scaleX(1);
+}
+
+.register-main {
+    height: 100%;
+    width: 50%;
+    padding-top: 10em;
+    padding-left: 10em;
+}
+
+.main-title {
+    font-size: 3em;
+    margin-bottom: 5px;
+}
+
+.sub-title {
+    font-size: 1.2em;
+    margin-top: 0px;
+    color: rgba(0, 0, 0, 0.7);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-items: center;
+}
+
+form div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+}
+
+.register-input {
+    height: 50px;
+    width: 98%;
+    padding-right: 5px;
+    border: 2px black solid;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-family: "Kaisei Decol", serif;
+}
+
+.register-btn {
+    height: 50px;
+    width: 50%;
+    border: 2px var(--color-accent) solid;
+    background: var(--color-accent);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-family: "Kaisei Decol", serif;
+    cursor: pointer;
+    transition: transform 500ms ease;
+}
+
+.register-btn:hover {
+    transform: scale(1.05);
+}
