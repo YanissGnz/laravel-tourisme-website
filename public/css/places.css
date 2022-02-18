@@ -103,6 +103,7 @@ nav a:hover:after {
     padding: 5rem 0 0;
     max-width: 22%;
     min-width: 15ch;
+    min-width: 330px;
     border-radius: 0.2rem;
     overflow: hidden;
     transition: transform 500ms ease;
@@ -133,6 +134,7 @@ nav a:hover:after {
     );
     transform: translateY(62%);
     transition: transform 500ms ease;
+    position: relative;
 }
 
 .card:hover .card-content,
@@ -186,7 +188,8 @@ nav a:hover:after {
 }
 
 .card-body {
-    color: rgba(255 255 255 / 0.8);
+    color: rgba(255 255 255 / 0.9);
+    min-height: 110px;
 }
 
 .card-btn {
@@ -202,6 +205,14 @@ nav a:hover:after {
 .card-btn:hover,
 .card-btn:focus {
     background-color: var(--bg-color);
+}
+
+.card-price {
+    position: absolute;
+    bottom: 8px;
+    right: 40px;
+    font-size: 1.2em;
+    font-weight: 600;
 }
 
 footer {

@@ -7,7 +7,7 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/css/places.css">
     </head>
 <body >
     <nav>
@@ -19,15 +19,9 @@
                 <li ><a href="/login" >Login</a></li>
             </ul>
         </nav>
-        <div class="bg-image">
-            <h5 class="intro-text">Explorez de beaux endroits et profitez de merveilleuses activités</h5>
-            <a href="#main" class="explore-btn">Explorez</a>
-            <div class="white-ora"></div>
-        </div>
         <div id="main" >
-            <h6>Meilleures endroits</h6>    
+            <h6 class="main-title">Tous les endroits</h6>    
             <div class="places-card-list">
-            @foreach ($places as $place)
                     <div class="card">
                     <img src="{{asset('../places/'. $place->thumpnail)}}" alt="Place image" class="card-img">
                     <div class="card-content">
@@ -36,31 +30,13 @@
                             {{$place->name}} 
                         </h1>
                         <p class="card-body">
-                        {{(strlen($place->description) > 120) ? substr($place->description,0,120).'...' : $place->description }}      
-                                      </p>
+                            {{$place->description}}      
+                        </p>
                         <a href="/place/{{$place->id}}" class="card-btn">Explorez</a>
                      </div>
                 </div> 
-                @endforeach
             </div>
-            <h6>Meilleures activités</h6>    
-            <div class="activities-card-list">
-            @foreach ($activities as $activity)
-                <div class="card">
-                    <img src="{{asset('../activities/'. $activity->thumpnail)}}" alt="Activity image" class="card-img">
-                    <div class="card-content">    
-                        <h1 class="card-title">
-                            {{$activity->name}} 
-                        </h1>
-                        <p class="card-body">
-                        {{ $activity->description }}      
-                                      </p>
-                        <a href="/activity/{{$activity->id}}" class="card-btn">Explorez</a>
-                         <p class="card-price"> {{$activity->price}} Da </p>
-                     </div>
-                </div> 
-                @endforeach
-            </div>
+            
             <footer>
                 Tourismo &copy; 2022
         </footer>

@@ -20,20 +20,21 @@
             </ul>
         </nav>
         <div id="main" >
-            <h6 class="main-title">Tous les endroits</h6>    
-            <div class="places-card-list">
-                  @foreach ($places as $place)
+            <h6 class="main-title">Tous les activités</h6>    
+            <div class="activities-card-list">
+                   @foreach ($activities as $activity)
                     <div class="card">
-                    <img src="{{asset('../places/'. $place->thumpnail)}}" alt="Place image" class="card-img">
+                    <img src="{{asset('../activities/'. $activity->thumpnail)}}" alt="Place image" class="card-img">
                     <div class="card-content">
                         
                         <h1 class="card-title">
-                            {{$place->name}} 
+                            {{$activity->name}} 
                         </h1>
                         <p class="card-body">
-                        {{(strlen($place->description) > 120) ? substr($place->description,0,120).'...' : $place->description }}      
+                        {{(strlen($activity->description) > 120) ? substr($activity->description,0,120).'...' : $activity->description }}      
                                       </p>
-                        <a href="#" class="card-btn">Explorez</a>
+                        <a href="/activity/{{$activity->id}}" class="card-btn">Explorez</a>
+                        <p class="card-price"> {{$activity->price}} Da </p>
                      </div>
                 </div> 
                 @endforeach
@@ -42,7 +43,8 @@
             <footer>
                 Tourismo &copy; 2022
         </footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1
+        /gsap.min.js" ></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
         <script src="/js/app.js" defer></script>
         <script>

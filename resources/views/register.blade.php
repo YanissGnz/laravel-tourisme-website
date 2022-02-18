@@ -13,8 +13,8 @@
             <h1 class="logo"><a href="/">Tourismo</a></h1>
             <ul>
                 <li><a href="/">Accueil</a></li>
-                <li><a href="/places">Places</a></li>
-                <li><a href="/activities">Activités</a></li>
+                <li><a href="/all-places">Places</a></li>
+                <li><a href="/all-activities">Activités</a></li>
                 <li><a href="/register">register</a></li>
             </ul>
         </nav>

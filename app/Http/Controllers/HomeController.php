@@ -12,12 +12,11 @@ class HomeController extends Controller
 {
     public function index()
     {   
-        $activities = activities::join('activityimg', function ($join) {
-            $join->on('activities.id', '=', 'activityimg.activity_id');
-        })
-        ->select(DB::raw('distinct activity_id ,name, description'))
+        $activities = DB::table('activities')
         ->take(4)
-        ->get();
+        ->inRandomOrder()
+        ->get()
+        ;
                                                                                   ;
         $places = DB::table('places')
         ->take(4)

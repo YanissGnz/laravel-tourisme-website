@@ -13,13 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [\App\Http\Controllers\HomeController::class,'index'])->name('home');
+
+Route::get('/all-places', [\App\Http\Controllers\AllPlacesController::class,'index'])->name('places');
+
+Route::get('/all-activities', [\App\Http\Controllers\AllActivitiesController::class,'index'])->name('activities');
+
+Route::get('place/{id}', [\App\Http\Controllers\PlaceController::class,'index']);
+
 Route::get('/login', function () {
     return view('login');
 });
 Route::get('/register', function () {
     return view('register');
 });
-Route::get('/all-places', function () {
-    return view('places');
-});
-Route::get('/', [\App\Http\Controllers\HomeController::class,'index'])->name('home');
