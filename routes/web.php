@@ -13,9 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
 Route::get('/login', function () {
     return view('login');
 });
@@ -25,3 +22,4 @@ Route::get('/register', function () {
 Route::get('/all-places', function () {
     return view('places');
 });
+Route::get('/', [\App\Http\Controllers\HomeController::class,'index'])->name('home');
