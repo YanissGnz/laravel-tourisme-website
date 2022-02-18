@@ -27,110 +27,38 @@
         <div id="main" >
             <h6>Meilleures endroits</h6>    
             <div class="places-card-list">
+            @foreach ($places as $place)
                 <div class="card">
-                    <img src="/places/place1.jpg" alt="Place image" class="card-img">
+                    <img src="{{asset('../places/'. $place->thumpnail)}}" alt="Place image" class="card-img">
                     <div class="card-content">
                         
                         <h1 class="card-title">
-                            Explorez 
+                            {{$place->name}} 
                         </h1>
                         <p class="card-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, iusto  Lorem ipsum dolor sit amet.
-                        </p>
-                        <a href="#" class="card-btn">Explorez</a>
-                     </div>
-                </div>  <div class="card">
-                    <img src="/places/place1.jpg" alt="Place image" class="card-img">
-                    <div class="card-content">
-                        
-                        <h1 class="card-title">
-                            Explorez 
-                        </h1>
-                        <p class="card-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, iusto  Lorem ipsum dolor sit amet.
-                        </p>
-                        <a href="#" class="card-btn">Explorez</a>
-                     </div>
-                </div>  <div class="card">
-                    <img src="/places/place1.jpg" alt="Place image" class="card-img">
-                    <div class="card-content">
-                        
-                        <h1 class="card-title">
-                            Explorez 
-                        </h1>
-                        <p class="card-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, iusto  Lorem ipsum dolor sit amet.
-                        </p>
-                        <a href="#" class="card-btn">Explorez</a>
-                     </div>
-                </div>  <div class="card">
-                    <img src="/places/place1.jpg" alt="Place image" class="card-img">
-                    <div class="card-content">
-                        
-                        <h1 class="card-title">
-                            Explorez 
-                        </h1>
-                        <p class="card-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, iusto  Lorem ipsum dolor sit amet.
-                        </p>
+                        {{ $place->description }}      
+                                      </p>
                         <a href="#" class="card-btn">Explorez</a>
                      </div>
                 </div> 
+                @endforeach
             </div>
             <h6>Meilleures activités</h6>    
             <div class="activities-card-list">
-               <div class="card">
-                    <img src="/places/place1.jpg" alt="Place image" class="card-img">
-                    <div class="card-content">
-                        
-                        <h1 class="card-title">
-                            Explorez 
-                        </h1>
-                        <p class="card-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, iusto  Lorem ipsum dolor sit amet.
-                        </p>
-                        <a href="#" class="card-btn">Explorez</a>
-                     </div>
-                </div>
+            @foreach ($activities as $activity)
                 <div class="card">
-                    <img src="/places/place1.jpg" alt="Place image" class="card-img">
-                    <div class="card-content">
-                        
+                    <img src="{{asset('../places/'. $activity->thumpnail)}}" alt="Place image" class="card-img">
+                    <div class="card-content">    
                         <h1 class="card-title">
-                            Explorez 
+                            {{$activity->name}} 
                         </h1>
                         <p class="card-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, iusto  Lorem ipsum dolor sit amet.
-                        </p>
+                        {{ $activity->description }}      
+                                      </p>
                         <a href="#" class="card-btn">Explorez</a>
                      </div>
-                </div>
-                <div class="card">
-                    <img src="/places/place1.jpg" alt="Place image" class="card-img">
-                    <div class="card-content">
-                        
-                        <h1 class="card-title">
-                            Explorez 
-                        </h1>
-                        <p class="card-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, iusto  Lorem ipsum dolor sit amet.
-                        </p>
-                        <a href="#" class="card-btn">Explorez</a>
-                     </div>
-                </div>
-                <div class="card">
-                    <img src="/places/place1.jpg" alt="Place image" class="card-img">
-                    <div class="card-content">
-                        
-                        <h1 class="card-title">
-                            Explorez 
-                        </h1>
-                        <p class="card-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, iusto  Lorem ipsum dolor sit amet.
-                        </p>
-                        <a href="#" class="card-btn">Explorez</a>
-                     </div>
-                </div>
+                </div> 
+                @endforeach
             </div>
             <footer>
                 Tourismo &copy; 2022
