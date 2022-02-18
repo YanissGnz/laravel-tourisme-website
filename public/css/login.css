@@ -102,6 +102,7 @@ form {
     margin-bottom: 15px;
     font-size: 18px;
     font-family: "Kaisei Decol", serif;
+    background: var(--bg-color);
 }
 
 .login-btn {

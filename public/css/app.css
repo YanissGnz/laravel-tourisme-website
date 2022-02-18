@@ -109,7 +109,7 @@ nav a:hover:after {
 
 .explore-btn:hover::before {
     -webkit-animation: border-animation2 500ms linear forwards;
-            animation: border-animation2 500ms linear forwards;
+    animation: border-animation2 500ms linear forwards;
 }
 
 @-webkit-keyframes border-animation2 {
@@ -179,7 +179,7 @@ nav a:hover:after {
 
 .explore-btn:hover::after {
     -webkit-animation: border-animation 500ms linear forwards;
-            animation: border-animation 500ms linear forwards;
+    animation: border-animation 500ms linear forwards;
 }
 
 @-webkit-keyframes border-animation {
@@ -258,7 +258,8 @@ nav a:hover:after {
     letter-spacing: 3px;
 }
 
-.card-list {
+.activities-card-list,
+.places-card-list {
     display: flex;
     width: 100%;
     padding-right: 10px;
@@ -286,7 +287,7 @@ nav a:hover:after {
     height: 100%;
     width: 100%;
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     top: 0;
     left: 0;
 }
@@ -394,4 +395,3 @@ footer {
         width: 80%;
     }
 }
-
