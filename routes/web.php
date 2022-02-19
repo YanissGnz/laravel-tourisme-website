@@ -21,6 +21,8 @@ Route::get('/all-activities', [\App\Http\Controllers\AllActivitiesController::cl
 
 Route::get('place/{id}', [\App\Http\Controllers\PlaceController::class,'index']);
 
+Route::get('activity/{id}', [\App\Http\Controllers\ActivityController::class,'index']);
+
 Route::get('/login', function () {
     return view('login');
 });

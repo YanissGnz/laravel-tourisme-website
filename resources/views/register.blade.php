@@ -15,7 +15,7 @@
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/all-places">Places</a></li>
                 <li><a href="/all-activities">Activités</a></li>
-                <li><a href="/register">register</a></li>
+                <li><a href="/login">Se connecter</a></li>
             </ul>
         </nav>
 
@@ -34,7 +34,7 @@
                     </div>
                     <input type="email" name="email" id="register-email" placeholder="Entrer votre email" class="register-input">
                 <input type="password" name="password" id="register-password" placeholder="Entrer votre mot de passe" class="register-input">
-                <input type="submit" value="register" class="register-btn">
+                <input type="submit" value="S'inscrire" class="register-btn">
             </form>
         </div>
 

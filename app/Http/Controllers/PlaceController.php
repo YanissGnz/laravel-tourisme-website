@@ -9,16 +9,20 @@ use Illuminate\Http\Request;
 
 class PlaceController extends Controller
 {
-   public function index(Request $request)
+   public function index(Request $request,$id)
     {   
+        $place = DB::table('places')->where("id",$id)->first();
 
-        $id = $request->input('id');
 
-        $sql = "SELECT * FROM places WHERE id = $id";
+        $placeimg = DB::table('placeimg')->where('placeimg.place_id',$id)->get();
 
-         $place = collect(\DB::table('places')->select($sql))->first();
+        $places = DB::table('places')
+                ->where("id","!=","$id")
+                ->take(4)
+                ->inRandomOrder()
+                ->get();
         
 
-        return view('place', compact( 'place'));
+        return view('place', compact( 'place','placeimg','places'));
     }
 }

@@ -16,7 +16,7 @@
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/all-places">Places</a></li>
                 <li><a href="/all-activities">Activités</a></li>
-                <li ><a href="/login" >Login</a></li>
+                <li ><a href="/login" >Se connecter</a></li>
             </ul>
         </nav>
         <div id="main" >
@@ -33,7 +33,7 @@
                         <p class="card-body">
                         {{(strlen($place->description) > 120) ? substr($place->description,0,120).'...' : $place->description }}      
                                       </p>
-                        <a href="#" class="card-btn">Explorez</a>
+                        <a href="/place/{{$place->id}}" class="card-btn">Explorez</a>
                      </div>
                 </div> 
                 @endforeach

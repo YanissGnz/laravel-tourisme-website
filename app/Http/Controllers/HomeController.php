@@ -21,8 +21,8 @@ class HomeController extends Controller
         $places = DB::table('places')
         ->take(4)
         ->inRandomOrder()
-        ->get()
-        ;
+        ->get();
+        
         return view('home', compact('places' , 'activities'));
     }
 }

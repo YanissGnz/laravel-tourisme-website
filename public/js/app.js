@@ -12,7 +12,7 @@ gsap.from(".register-main", { delay: 1, duration: 1, opacity: 0 });
 
 gsap.from(".places-card-list", {
     scrollTrigger: ".places-card-list",
-    duration: 1.5,
+    duration: 1,
     opacity: 0,
     y: 80,
 });
@@ -23,3 +23,12 @@ gsap.from(".activities-card-list", {
     opacity: 0,
     y: 80,
 });
+
+gsap.from(".main-title", {
+    scrollTrigger: ".main-title",
+    duration: 1.5,
+    opacity: 0,
+    y: 60,
+});
+
+new Splide(".splide").mount();

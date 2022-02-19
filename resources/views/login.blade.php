@@ -15,13 +15,13 @@
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/all-places">Places</a></li>
                 <li><a href="/all-activities">Activités</a></li>
-                <li><a href="/register">Register</a></li>
+                <li><a href="/register">S'inscrire</a></li>
             </ul>
         </nav>
 
         <div class="login-main">
             <h1 class="main-title">
-                Login
+                Se connecter
             </h1>
             <h2 class="sub-title">
                 Enter votre informations
@@ -29,7 +29,7 @@
             <form method="post" action="login.php" class="login-form">
                 <input type="email" name="email" id="login-email" placeholder="Entrer votre email" class="login-input">
                 <input type="password" name="password" id="login-password" placeholder="Entrer votre mot de passe" class="login-input">
-                <input type="submit" value="Login" class="login-btn">
+                <input type="submit" value="Se connecter" class="login-btn">
             </form>
         </div>
 

@@ -1,0 +1,316 @@
+@import url(https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&display=swap);
+:root {
+    --bg-color: #f2f5c8;
+    --color-accent: #a1b57d;
+}
+
+*,
+*::after,
+*::before {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Kaisei Decol", serif;
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+}
+nav {
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav h1 {
+    margin-left: 5%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.7em;
+}
+nav ul {
+    list-style: none;
+    display: inline-flex;
+    justify-content: flex-end;
+    gap: 50px;
+    margin-right: 5%;
+}
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.1em;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    background-color: var(--color-accent);
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform 500ms ease;
+}
+
+nav a:hover:after {
+    transform: scaleX(1);
+}
+
+#main {
+    margin-top: 90px;
+    z-index: 10;
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+h6 {
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 2em;
+}
+
+.carousel {
+    width: 60%;
+    margin: auto;
+}
+
+.splide__slide {
+    height: 500px;
+    object-fit: contain;
+}
+
+.details {
+    padding: 0 2em;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.booking {
+    width: 40%;
+    margin: auto;
+}
+
+.booking h6 {
+    font-size: 2em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.dates {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.date {
+    width: 47.5%;
+}
+
+.date-lable {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.lable {
+    align-self: flex-start;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.booking-input {
+    height: 50px;
+    width: 100%;
+    padding-left: 5px;
+    border: 2px black solid;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-family: "Kaisei Decol", serif;
+    background: var(--bg-color);
+}
+
+.booking-input:nth-of-type(4) {
+    width: 102%;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+.booking-btn {
+    height: 50px;
+    width: 50%;
+    border: 2px var(--color-accent) solid;
+    background: var(--color-accent);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-family: "Kaisei Decol", serif;
+    cursor: pointer;
+    transition: transform 500ms ease;
+}
+
+.booking-btn:hover {
+    transform: scale(1.05);
+}
+
+.activities-card-list,
+.places-card-list {
+    display: flex;
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    color: #fff;
+    font-size: 18px;
+    padding: 5rem 0 0;
+    max-width: 22%;
+    min-width: 15ch;
+    min-width: 330px;
+    border-radius: 0.2rem;
+    overflow: hidden;
+    transition: transform 500ms ease;
+}
+
+.card-img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+
+.card:hover,
+.card:focus-within {
+    transform: scale(1.05);
+    text-align: left;
+}
+.card-content {
+    --padding: 1.5rem;
+    padding: var(--padding);
+    background: linear-gradient(
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.3) 10%,
+        rgba(0, 0, 0, 1)
+    );
+    transform: translateY(62%);
+    transition: transform 500ms ease;
+}
+
+.card:hover .card-content,
+.card:focus-within .card-content {
+    transform: translateY(0);
+    transition-delay: 500ms;
+}
+.card:focus-within .card-content {
+    transition-duration: 0ms;
+}
+
+.card-content > *:not(.card-title) {
+    opacity: 0;
+    transition: opacity 500ms linear;
+}
+
+.card:hover .card-content > *:not(.card-title) {
+    opacity: 1;
+    transition-delay: 1000ms;
+}
+.card:focus-within .card-content > *:not(.card-title) {
+    opacity: 1;
+    transition-delay: 500ms;
+}
+
+.card-title {
+    position: relative;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 100%;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+.card-title:after {
+    content: "";
+    background-color: var(--color-accent);
+    position: absolute;
+    height: 4px;
+    width: calc(100% + var(--padding));
+    left: calc(var(--padding) * -1);
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform 500ms ease;
+    transform-origin: left;
+}
+
+.card:hover .card-title::after,
+.card:focus-within .card-title::after {
+    transform: scaleX(1);
+}
+
+.card-body {
+    color: rgba(255 255 255 / 0.8);
+    min-height: 110px;
+}
+
+.card-btn {
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color: var(--color-accent);
+    padding: 0.5em 1.25em;
+    border-radius: 0.2rem;
+}
+
+.card-btn:hover,
+.card-btn:focus {
+    background-color: var(--bg-color);
+}
+
+.card-price {
+    position: absolute;
+    bottom: 8px;
+    right: 40px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+footer {
+    height: 200px;
+    margin-top: 100px;
+    background-color: #a1b57d;
+    color: black;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

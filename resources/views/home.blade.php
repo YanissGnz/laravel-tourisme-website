@@ -16,7 +16,7 @@
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/all-places">Places</a></li>
                 <li><a href="/all-activities">Activités</a></li>
-                <li ><a href="/login" >Login</a></li>
+                <li ><a href="/login" >Se connecter</a></li>
             </ul>
         </nav>
         <div class="bg-image">

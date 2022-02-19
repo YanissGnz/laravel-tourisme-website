@@ -16,7 +16,7 @@
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/all-places">Places</a></li>
                 <li><a href="/all-activities">Activités</a></li>
-                <li ><a href="/login" >Login</a></li>
+                <li ><a href="/login" >Se connecter</a></li>
             </ul>
         </nav>
         <div id="main" >
@@ -43,8 +43,7 @@
             <footer>
                 Tourismo &copy; 2022
         </footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1
-        /gsap.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" ></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
         <script src="/js/app.js" defer></script>
         <script>
