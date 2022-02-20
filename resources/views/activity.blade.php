@@ -39,21 +39,26 @@
             </div>
         </div>
 
-        <div class="booking">
+        <div class="booking" id='booking-form'>
             <h6>Faire une résertvation</h6>
-            <form method="get" action="booking.php?id={{$activity->id}}" class="booking-form">
-                <div class="dates">
+            <form method="get" action="{{ route('activity.booking',['id'=>$activity->id])}}" class="booking-form">
+            @if(Session::get('success'))
+             <div class="alert-success">
+                {{ Session::get('success') }}
+             </div>
+           @endif
+            <div class="dates">
                     <div class=date>
                         <h5 class="date-lable">Selectionné date début:</h5>
-                        <input type="date" name="from_date"  class="booking-input">
+                        <input required type="date" name="from_date"  class="booking-input">
                     </div>
                     <div class=date>
                         <h5 class="date-lable">Nombre de presonne:</h5>
-                        <input type="date" name="to_date"  class="booking-input">
+                        <input required type="date" name="to_date"  class="booking-input">
                     </div>
                 </div> 
                 <h5 class="lable">Selectionné date fin:</h5>
-                <select name="number" class="booking-input">
+                <select name="number" required class="booking-input">
                     <option value="">Choisir le nombre de personne</option>
                     <option value="1">1 Adulte</option>
                     <option value="2">2 Adultes</option>

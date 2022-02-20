@@ -22,7 +22,7 @@ class MainController extends Controller
             'firstname'=>'required',
             'lastname'=>'required',
             'email'=>'required|email|unique:users',
-            'password'=>'required|min:5|max:12'
+            'password'=>'required|min:5'
         ]);
          $users = new users;
          $users->firstname = $request->firstname;
@@ -31,9 +31,9 @@ class MainController extends Controller
          $users->password = Hash::make($request->password);
          $save = $users->save();
          if($save){
-            return back()->with('success','New User has been successfuly added to database');
+            return   redirect('/');
          }else{
-             return back()->with('fail','Something went wrong, try again later');
+             return back()->with('fail',' Il y a un erreur ');
          }
     }
 
@@ -45,14 +45,14 @@ class MainController extends Controller
 
         $userInfo = users::where('email','=', $request->email)->first();
         if(!$userInfo){
-            return back()->with('fail','We do not recognize your email address');
+            return back()->with('fail','L adresse email n existe pas');
         }else{
             if(Hash::check($request->password, $userInfo->password)){
                 $request->session()->put('LoggedUser', $userInfo->id);
                 return redirect('/');
 
             }else{
-                return back()->with('fail','Incorrect password');
+                return back()->with('fail',' Password est Incorrect');
             }
         }
     }
@@ -67,32 +67,4 @@ class MainController extends Controller
         return view('profil', $data);
     }
 
-/*
-    function logout(){
-        if(session()->has('LoggedUser')){
-            session()->pull('LoggedUser');
-            return redirect('/auth/login');
-        }
-    }
-
-    /*
-    function dashboard(){
-        $data = ['LoggedUserInfo'=>Admin::where('id','=', session('LoggedUser'))->first()];
-        return view('admin.dashboard', $data);
-    }
-
-    function settings(){
-        $data = ['LoggedUserInfo'=>Admin::where('id','=', session('LoggedUser'))->first()];
-        return view('admin.settings', $data);
-    }
-
-    function profile(){
-        $data = ['LoggedUserInfo'=>Admin::where('id','=', session('LoggedUser'))->first()];
-        return view('admin.profile', $data);
-    }
-    function staff(){
-        $data = ['LoggedUserInfo'=>Admin::where('id','=', session('LoggedUser'))->first()];
-        return view('admin.staff', $data);
-    }
-    */
 }

@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 
 class ActivityController extends Controller
 {
+    
    public function index(Request $request,$id)
     {   
 
@@ -26,5 +27,21 @@ class ActivityController extends Controller
         $data = ['LoggedUserInfo'=>users::where('id','=', session('LoggedUser'))->first()];
 
         return view('activity', compact( 'activity','activityimg','activities','data'));
+    }
+
+    public function booking(Request $request,$id)
+    {
+        $nbr_pr = $request->input('number');
+        $from_date = $request->input('from_date');
+        $to_date= $request->input('to_date');
+        DB::table('bookings')->insert([
+            'activity_id' => $id,
+            'user_id'=> session('LoggedUser'),
+            'nbr_pr' => $nbr_pr,
+            'from_date'=> $from_date,
+            'to_date'=>  $to_date,
+        ]);
+
+        return \Redirect::route('activity-to-form',$id)->with('success','Résertvation ajoutée');
     }
 }
