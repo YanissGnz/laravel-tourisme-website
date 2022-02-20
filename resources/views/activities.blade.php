@@ -16,6 +16,7 @@
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/all-places">Places</a></li>
                 <li><a href="/all-activities">Activités</a></li>
+                <li style = "display : {{  session()->has('LoggedUser') ? 'none' : '' }}" ><a href="{{route('auth.login') }}" >Se connecter</a></li>
                 <li style = "display : {{  session()->has('LoggedUser') ? '' : 'none' }}" ><a href="{{route('auth.logout') }}" >Se deconnecter</a></li>
             </ul>
     </nav>

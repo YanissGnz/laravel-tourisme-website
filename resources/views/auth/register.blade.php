@@ -14,7 +14,7 @@
             <ul>
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/all-places">Places</a></li>
-                <li><a href="/all-activities">Activités</a></li>
+                <li><a href="/all-activities">Activités</a></li>    
                 <li><a href="{{ route('auth.login') }}">Se connecter</a></li>
             </ul>
         </nav>
