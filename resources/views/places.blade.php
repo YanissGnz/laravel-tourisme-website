@@ -16,8 +16,7 @@
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/all-places">Places</a></li>
                 <li><a href="/all-activities">Activités</a></li>
-                <li ><a href="/login" >Se connecter</a></li>
-            </ul>
+                <li ><a href="{{ session()->has('LoggedUser') ? route('profil'):route('auth.login') }}" > {{  session()->has('LoggedUser') ? $data['LoggedUserInfo']['firstname'] : 'Se Connecter' }}</a></li>            </ul>
         </nav>
         <div id="main" >
             <h6 class="main-title">Tous les endroits</h6>    

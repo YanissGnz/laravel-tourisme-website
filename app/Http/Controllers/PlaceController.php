@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Place;
 use App\Models\Placeimg;
 use DB;
+use App\Models\users;
+
 
 use Illuminate\Http\Request;
 
@@ -21,8 +23,10 @@ class PlaceController extends Controller
                 ->take(4)
                 ->inRandomOrder()
                 ->get();
-        
 
-        return view('place', compact( 'place','placeimg','places'));
+        
+                $data = ['LoggedUserInfo'=>users::where('id','=', session('LoggedUser'))->first()];
+
+        return view('place', compact( 'place','placeimg','places','data'));
     }
 }
