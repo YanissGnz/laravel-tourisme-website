@@ -15,7 +15,7 @@
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/all-places">Places</a></li>
                 <li><a href="/all-activities">Activités</a></li>
-                <li><a href="/login">Se connecter</a></li>
+                <li><a href="{{ route('auth.login') }}">Se connecter</a></li>
             </ul>
         </nav>
 
@@ -26,14 +26,30 @@
             <h2 class="sub-title">
                 Enter votre informations
             </h2>
-            <form method="post" action="register.php" class="register-form">
-                <div>
-                    <input type="text" name="name" id="register-name" placeholder="Entrer votre nom" class="register-input">
+            <form method="post" action="{{ route('auth.save') }}" class="register-form">
+            @if(Session::get('success'))
+             <div class="alert alert-success">
+                {{ Session::get('success') }}
+             </div>
+           @endif
+           @if(Session::get('fail'))
+             <div class="alert alert-danger">
+                {{ Session::get('fail') }}
+             </div>
+           @endif  
+           @csrf
+            <div>
+                    <input type="text" name="firstname" id="register-name" placeholder="Entrer votre nom" class="register-input">
+                    <span class="text-danger">@error('firstname'){{ $message }} @enderror</span>
                     <input type="text" name="lastname" id="register-lastname" placeholder="Entrer votre prenom" class="register-input">
-
+                    <span class="text-danger">@error('lastname'){{ $message }} @enderror</span>
                     </div>
                     <input type="email" name="email" id="register-email" placeholder="Entrer votre email" class="register-input">
-                <input type="password" name="password" id="register-password" placeholder="Entrer votre mot de passe" class="register-input">
+                    <span class="text-danger">@error('email'){{ $message }} @enderror</span>
+
+                    <input type="password" name="password" id="register-password" placeholder="Entrer votre mot de passe" class="register-input">
+                    <span class="text-danger">@error('password'){{ $message }} @enderror</span>
+
                 <input type="submit" value="S'inscrire" class="register-btn">
             </form>
         </div>

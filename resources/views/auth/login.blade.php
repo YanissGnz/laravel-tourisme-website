@@ -15,7 +15,7 @@
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/all-places">Places</a></li>
                 <li><a href="/all-activities">Activités</a></li>
-                <li><a href="/register">S'inscrire</a></li>
+                <li><a href="{{ route('auth.register') }}">S'inscrire</a></li>
             </ul>
         </nav>
 
@@ -26,9 +26,18 @@
             <h2 class="sub-title">
                 Enter votre informations
             </h2>
-            <form method="post" action="login.php" class="login-form">
+            <form method="post" action="{{ route('auth.check') }}" class="login-form">
+            @if(Session::get('fail'))
+               <div class="alert alert-danger">
+                  {{ Session::get('fail') }}
+               </div>
+            @endif
+  
+           @csrf
                 <input type="email" name="email" id="login-email" placeholder="Entrer votre email" class="login-input">
+                <span class="text-danger">@error('email'){{ $message }} @enderror</span>
                 <input type="password" name="password" id="login-password" placeholder="Entrer votre mot de passe" class="login-input">
+                <span class="text-danger">@error('password'){{ $message }} @enderror</span>
                 <input type="submit" value="Se connecter" class="login-btn">
             </form>
         </div>

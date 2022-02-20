@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Place;
+use App\Models\users;
+
 use App\Models\Placeimg;
 use DB;
 
@@ -21,7 +23,8 @@ class ActivityController extends Controller
                     ->inRandomOrder()
                     ->get();
         
+        $data = ['LoggedUserInfo'=>users::where('id','=', session('LoggedUser'))->first()];
 
-        return view('activity', compact( 'activity','activityimg','activities'));
+        return view('activity', compact( 'activity','activityimg','activities','data'));
     }
 }
