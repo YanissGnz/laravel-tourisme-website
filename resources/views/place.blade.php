@@ -17,7 +17,8 @@
                 <li><a href="/">Accueil</a></li>
                 <li><a href="/all-places">Places</a></li>
                 <li><a href="/all-activities">Activités</a></li>
-                <li ><a href="{{ session()->has('LoggedUser') ? route('profil'):route('auth.login') }}" > {{  session()->has('LoggedUser') ? $data['LoggedUserInfo']['firstname'] : 'Se Connecter' }}</a></li>            </ul>
+                <li style = "display : {{  session()->has('LoggedUser') ? '' : 'none' }}" ><a href="{{route('auth.logout') }}" >Se deconnecter</a></li>
+            </ul>
         </nav>
         <div id="main" >
             <div class="carousel">

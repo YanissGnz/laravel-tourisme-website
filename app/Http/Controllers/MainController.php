@@ -31,9 +31,9 @@ class MainController extends Controller
          $users->password = Hash::make($request->password);
          $save = $users->save();
          if($save){
-            return back()->with('success','New User has been successfuly added to database');
+            return back()->with('success','Le comptre a été crée');
          }else{
-             return back()->with('fail','Something went wrong, try again later');
+             return back()->with('fail','Quelque chose s"est mal passé, réessayez plus tard');
          }
     }
 

@@ -28,23 +28,24 @@
             </h2>
             <form method="post" action="{{ route('auth.check') }}" class="login-form">
             @if(Session::get('fail'))
-               <div class="alert alert-danger">
+               <div class="alert">
                   {{ Session::get('fail') }}
                </div>
             @endif
   
            @csrf
                 <input type="email" name="email" id="login-email" placeholder="Entrer votre email" class="login-input">
-                <span class="text-danger">@error('email'){{ $message }} @enderror</span>
+                <span class="text-danger error">@error('email'){{ $message }} @enderror</span>
                 <input type="password" name="password" id="login-password" placeholder="Entrer votre mot de passe" class="login-input">
-                <span class="text-danger">@error('password'){{ $message }} @enderror</span>
+                <span class="text-danger error">@error('password'){{ $message }} @enderror</span>
                 <input type="submit" value="Se connecter" class="login-btn">
             </form>
         </div>
 
     
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" ></script>
-        <script src="/js/app.js" defer></script>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+        <script src="/js/app.js" ></script>
     </body>
 </html>
     
