@@ -31,9 +31,9 @@ class MainController extends Controller
          $users->password = Hash::make($request->password);
          $save = $users->save();
          if($save){
-            return   redirect('/');
+            return back()->with('success','Le comptre a été crée');
          }else{
-             return back()->with('fail',' Il y a un erreur ');
+             return back()->with('fail','Quelque chose s"est mal passé, réessayez plus tard');
          }
     }
 

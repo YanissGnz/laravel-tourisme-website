@@ -86,6 +86,19 @@ nav a:hover:after {
     margin-top: 0px;
     color: rgba(0, 0, 0, 0.7);
 }
+
+.alert {
+    text-align: center;
+    color: red;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    width: 98%;
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 5px;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -99,10 +112,18 @@ form {
     padding-left: 5px;
     border: 2px black solid;
     border-radius: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-size: 18px;
     font-family: "Kaisei Decol", serif;
     background: var(--bg-color);
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+    margin-top: -5px;
+    align-self: flex-start;
+    font-size: 14px;
 }
 
 .login-btn {

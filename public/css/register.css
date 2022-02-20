@@ -93,12 +93,16 @@ form {
     align-items: center;
 }
 
-form div {
+.first-inputs {
     display: flex;
     flex-direction: row;
     width: 100%;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
+}
+
+form div {
+    width: 100%;
 }
 
 .register-input {
@@ -113,6 +117,30 @@ form div {
     background: var(--bg-color);
 }
 
+.alert {
+    text-align: center;
+    color: red;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    width: 98%;
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    align-self: flex-start;
+    font-size: 14px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
 .register-btn {
     height: 50px;
     width: 50%;
